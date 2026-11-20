@@ -33,6 +33,12 @@ content:
           - name: email
             label: "E-mail (deixe em branco para não mostrar)"
             type: string
+          - name: google_avaliar
+            label: "Link para avaliar no Google (Ex.: https://g.page/r/.../review)"
+            type: string
+          - name: google_perfil
+            label: "Link do perfil no Google Maps (para ver as avaliações)"
+            type: string
 
       - name: redes
         label: "Redes sociais e páginas"

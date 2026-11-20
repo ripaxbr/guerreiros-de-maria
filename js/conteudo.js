@@ -30,6 +30,14 @@
     document.querySelectorAll('[data-email-bloco]').forEach((el) => el.classList.toggle('hidden', !email));
     document.querySelectorAll('[data-campo-email]').forEach((a) => { a.textContent = email; a.href = 'mailto:' + email; });
     document.querySelectorAll('[data-campo-email-texto]').forEach((el) => (el.textContent = email));
+
+    // Avaliações no Google: a área só aparece com pelo menos um link válido
+    const linkOk = (u) => /^https?:\/\//i.test(String(u || '').trim());
+    const avaliar = linkOk(c.google_avaliar) ? c.google_avaliar.trim() : '';
+    const perfil = linkOk(c.google_perfil) ? c.google_perfil.trim() : '';
+    document.querySelectorAll('[data-google-bloco]').forEach((el) => el.classList.toggle('hidden', !avaliar && !perfil));
+    document.querySelectorAll('[data-google-avaliar]').forEach((a) => { a.classList.toggle('hidden', !avaliar); if (avaliar) a.href = avaliar; });
+    document.querySelectorAll('[data-google-perfil]').forEach((a) => { a.classList.toggle('hidden', !perfil); if (perfil) a.href = perfil; });
   }
 
   const REDES = {
