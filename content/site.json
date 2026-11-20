@@ -4,7 +4,13 @@
     "whatsapp_exibicao": "(34) 9199-0004",
     "email": ""
   },
-  "redes": [],
+  "redes": [
+    {
+      "rede": "instagram",
+      "nome": "@guerreiros.demaria",
+      "url": "https://www.instagram.com/guerreiros.demaria"
+    }
+  ],
   "projetos": [
     {
       "categoria": "social",
