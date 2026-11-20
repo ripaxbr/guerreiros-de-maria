@@ -34,6 +34,41 @@ content:
             label: "E-mail (deixe em branco para não mostrar)"
             type: string
 
+      - name: redes
+        label: "Redes sociais e páginas"
+        type: object
+        list:
+          collapsible:
+            collapsed: true
+            summary: "{nome}"
+        fields:
+          - name: rede
+            label: "Rede"
+            type: select
+            required: true
+            options:
+              values:
+                - name: instagram
+                  label: Instagram
+                - name: facebook
+                  label: Facebook
+                - name: youtube
+                  label: YouTube
+                - name: tiktok
+                  label: TikTok
+                - name: whatsapp
+                  label: "Grupo/Canal do WhatsApp"
+                - name: site
+                  label: "Outro site"
+          - name: nome
+            label: "Nome que aparece no botão (Ex.: @guerreirosdemaria)"
+            type: string
+            required: true
+          - name: url
+            label: "Link completo (Ex.: https://instagram.com/guerreirosdemaria)"
+            type: string
+            required: true
+
       - name: projetos
         label: "Projetos"
         type: object

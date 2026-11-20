@@ -32,6 +32,31 @@
     document.querySelectorAll('[data-campo-email-texto]').forEach((el) => (el.textContent = email));
   }
 
+  const REDES = {
+    instagram: { nome: 'Instagram', cor: 'bg-pink-600 hover:bg-pink-700' },
+    facebook: { nome: 'Facebook', cor: 'bg-blue-600 hover:bg-blue-700' },
+    youtube: { nome: 'YouTube', cor: 'bg-red-600 hover:bg-red-700' },
+    tiktok: { nome: 'TikTok', cor: 'bg-slate-900 hover:bg-black' },
+    whatsapp: { nome: 'WhatsApp', cor: 'bg-emerald-600 hover:bg-emerald-700' },
+    site: { nome: 'Site', cor: 'bg-navy-900 hover:bg-navy-800' }
+  };
+
+  function aplicarRedes(lista) {
+    const validas = (Array.isArray(lista) ? lista : []).filter((r) => /^https?:\/\//i.test(String(r.url || '').trim()));
+    document.querySelectorAll('[data-redes-bloco]').forEach((el) => el.classList.toggle('hidden', !validas.length));
+    const botoes = validas.map((r) => {
+      const info = REDES[r.rede] || REDES.site;
+      return `<a href="${esc(r.url.trim())}" target="_blank" rel="noopener" class="inline-flex items-center gap-2 ${info.cor} text-white text-sm font-semibold px-4 py-2 rounded-xl transition">
+          <span class="text-[10px] uppercase tracking-wider opacity-80">${esc(info.nome)}</span><span>${esc(r.nome || info.nome)}</span></a>`;
+    }).join('');
+    document.querySelectorAll('[data-redes]').forEach((el) => (el.innerHTML = botoes));
+    const links = validas.map((r) => {
+      const info = REDES[r.rede] || REDES.site;
+      return `<a href="${esc(r.url.trim())}" target="_blank" rel="noopener" class="hover:text-gold-400 underline">${esc(info.nome)}</a>`;
+    }).join('');
+    document.querySelectorAll('[data-redes-rodape]').forEach((el) => (el.innerHTML = links));
+  }
+
   function aplicarProjetos(lista) {
     const grid = document.getElementById('projects-grid');
     if (!grid || !Array.isArray(lista)) return;
@@ -93,6 +118,6 @@
 
   fetch('content/site.json', { cache: 'no-store' })
     .then((r) => (r.ok ? r.json() : Promise.reject(r.status)))
-    .then((d) => { aplicarContato(d.contato); aplicarProjetos(d.projetos); aplicarGaleria(d.galeria); })
+    .then((d) => { aplicarContato(d.contato); aplicarRedes(d.redes); aplicarProjetos(d.projetos); aplicarGaleria(d.galeria); })
     .catch((e) => console.warn('Conteúdo do painel não carregado; usando o padrão.', e));
 })();
