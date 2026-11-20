@@ -1,15 +1,18 @@
-# Casa Guerreiros de Maria — Site
+# AGGM – Associação Grupo Guerreiros de Maria
 
-Site estático (HTML, CSS e JS puros), sem build.
+Site institucional da Associação Grupo Guerreiros de Maria — Av. Rio Jáguari, 1860, Bairro Mansour, Uberlândia - MG.
+
+Site estático (um único `index.html` com Tailwind via CDN). Não precisa de build.
 
 ## Estrutura
-- `index.html` — página única: Início, Sobre, Agenda, Galeria, Contato
-- `css/style.css` — visual (cores em `:root`)
-- `js/main.js` — menu mobile, ano do rodapé e link do WhatsApp
-- `img/` — logo e fotos
+- `index.html` — página completa
+- `fotos/` — imagens da galeria:
+  - `fachada-1860.webp`
+  - `painel-sede.webp`
+  - `mesa-brasil-sesc.webp`
+  - `solenidade-camara.webp`
+  - `homenagem-institucional.webp`
+- `videos/` — `acao-guerreiros.mp4`
 
-## Para completar
-Procure por `[EDITAR]` no `index.html` e coloque o número do WhatsApp em `js/main.js`.
-
-## Ver localmente
-Abra o `index.html` no navegador.
+## Deploy na Vercel
+Importe o repositório na Vercel com Framework Preset **Other**, sem comando de build e com Output Directory em branco (raiz).

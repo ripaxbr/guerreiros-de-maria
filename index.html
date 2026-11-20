@@ -1,81 +1,598 @@
 <!DOCTYPE html>
-<html lang="pt-BR">
+<html lang="pt-BR" class="scroll-smooth">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Casa Guerreiros de Maria</title>
-  <meta name="description" content="Casa Guerreiros de Maria — fé, acolhimento e caridade.">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Associação Grupo Guerreiros de Maria | Bairro Mansour - Uberlândia/MG</title>
+  <meta name="description" content="Site institucional da Associação Grupo Guerreiros de Maria, localizada no bairro Mansour em Uberlândia - MG. Projetos sociais, educação, cultura, voluntariado e doações." />
+  <script src="https://cdn.tailwindcss.com"></script>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="css/style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@400;700;900&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            navy: {
+              800: '#162A4C',
+              900: '#0F1F3D',
+              950: '#091326'
+            },
+            gold: {
+              400: '#FBBF24',
+              500: '#D97706',
+              600: '#B45309'
+            },
+            sand: {
+              50: '#FAF8F5',
+              100: '#F3EFE8',
+              200: '#E7E0D3'
+            }
+          },
+          fontFamily: {
+            serif: ['Merriweather', 'serif'],
+            sans: ['Plus Jakarta Sans', 'sans-serif']
+          }
+        }
+      }
+    }
+  </script>
 </head>
-<body>
+<body class="bg-sand-50 text-slate-800 font-sans antialiased">
 
-  <header class="topo">
-    <a href="#inicio" class="marca">Guerreiros de Maria</a>
-    <button class="menu-btn" aria-label="Abrir menu" aria-expanded="false">☰</button>
-    <nav class="menu">
-      <a href="#sobre">Sobre</a>
-      <a href="#agenda">Agenda</a>
-      <a href="#galeria">Galeria</a>
-      <a href="#contato">Contato</a>
-    </nav>
+  <!-- Barra Superior Institucional & Acessibilidade -->
+  <div class="bg-navy-950 text-slate-200 text-xs py-2 px-4 border-b border-navy-800">
+    <div class="max-w-7xl mx-auto flex flex-wrap items-center justify-between gap-2">
+      <div class="flex items-center gap-4">
+        <span class="flex items-center gap-1.5">
+          <svg class="w-4 h-4 text-gold-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/></svg>
+          Av. Rio Jáguari, 1860 - Mansour, Uberlândia - MG
+        </span>
+        <span class="hidden sm:inline-flex items-center gap-1.5 text-emerald-400 font-medium">
+          <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+          Espaço com Entrada Acessível
+        </span>
+      </div>
+      <div class="flex items-center gap-3">
+        <button onclick="toggleFontSize()" class="hover:text-gold-400 transition underline" title="Aumentar tamanho do texto">A+ Acessibilidade</button>
+        <a href="#doar" class="bg-gold-500 hover:bg-gold-600 text-white font-semibold px-3 py-0.5 rounded-full transition">Apoiar Agora</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Cabeçalho / Navegação -->
+  <header class="sticky top-0 z-40 bg-white/95 backdrop-blur border-b border-sand-200 shadow-sm">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
+      <a href="#inicio" class="flex items-center gap-3 group">
+        <div class="w-11 h-11 rounded-xl bg-navy-900 flex items-center justify-center text-gold-400 font-serif font-bold text-xl shadow-md group-hover:scale-105 transition">
+          GM
+        </div>
+        <div>
+          <span class="block font-serif font-bold text-navy-900 text-base sm:text-lg leading-tight">Guerreiros de Maria</span>
+          <span class="block text-xs text-slate-500 font-medium">Associação Comunitária • Mansour</span>
+        </div>
+      </a>
+
+      <nav class="hidden md:flex items-center gap-7 text-sm font-semibold text-slate-700">
+        <a href="#inicio" class="hover:text-gold-600 transition">Início</a>
+        <a href="#sobre" class="hover:text-gold-600 transition">Sobre Nós</a>
+        <a href="#atividades" class="hover:text-gold-600 transition">Atividades</a>
+        <a href="#galeria" class="hover:text-gold-600 transition">Fotos e Vídeos</a>
+        <a href="#transparencia" class="hover:text-gold-600 transition">Transparência</a>
+        <a href="#contato" class="hover:text-gold-600 transition">Localização & Contato</a>
+      </nav>
+
+      <div class="flex items-center gap-3">
+        <a href="https://wa.me/553491990004?text=Ol%C3%A1!%20Gostaria%20de%20saber%20mais%20sobre%20a%20Associa%C3%A7%C3%A3o%20Grupo%20Guerreiros%20de%20Maria." target="_blank" rel="noopener" class="hidden sm:inline-flex items-center gap-2 bg-emerald-600 hover:bg-emerald-700 text-white text-sm font-semibold px-4 py-2.5 rounded-xl transition shadow-sm">
+          <span>WhatsApp</span>
+        </a>
+        <a href="#doar" class="hidden lg:inline-flex items-center gap-2 bg-navy-900 hover:bg-navy-800 text-white text-sm font-semibold px-5 py-2.5 rounded-xl transition shadow-sm">
+          <span>Como Ajudar</span>
+        </a>
+        <button id="mobile-menu-btn" onclick="toggleMobileMenu()" class="md:hidden p-2 rounded-lg text-navy-900 hover:bg-sand-100" aria-label="Abrir menu">
+          <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/></svg>
+        </button>
+      </div>
+    </div>
+
+    <!-- Menu Mobile -->
+    <div id="mobile-menu" class="hidden md:hidden bg-white border-t border-sand-200 px-4 pt-3 pb-5 space-y-2">
+      <a href="#inicio" onclick="toggleMobileMenu()" class="block py-2 text-slate-700 font-semibold">Início</a>
+      <a href="#sobre" onclick="toggleMobileMenu()" class="block py-2 text-slate-700 font-semibold">Sobre Nós</a>
+      <a href="#atividades" onclick="toggleMobileMenu()" class="block py-2 text-slate-700 font-semibold">Atividades</a>
+      <a href="#galeria" onclick="toggleMobileMenu()" class="block py-2 text-slate-700 font-semibold">Fotos e Vídeos</a>
+      <a href="#transparencia" onclick="toggleMobileMenu()" class="block py-2 text-slate-700 font-semibold">Transparência</a>
+      <a href="#contato" onclick="toggleMobileMenu()" class="block py-2 text-slate-700 font-semibold">Localização & Contato</a>
+      <a href="https://wa.me/553491990004?text=Ol%C3%A1!%20Gostaria%20de%20saber%20mais%20sobre%20a%20Associa%C3%A7%C3%A3o%20Grupo%20Guerreiros%20de%20Maria." target="_blank" rel="noopener" class="block mt-2 text-center bg-emerald-600 text-white font-bold py-2.5 rounded-xl">Falar no WhatsApp</a>
+      <a href="#doar" onclick="toggleMobileMenu()" class="block mt-2 text-center bg-gold-500 text-white font-bold py-2.5 rounded-xl">Fazer uma Doação</a>
+    </div>
   </header>
 
-  <main>
-    <section id="inicio" class="hero">
-      <div class="hero-conteudo">
-        <p class="sobretitulo">Seja bem-vindo(a)</p>
-        <h1>Casa Guerreiros de Maria</h1>
-        <p class="lema">[EDITAR: frase/lema da casa]</p>
-        <a href="#agenda" class="botao">Ver agenda</a>
+  <!-- Hero Section -->
+  <section id="inicio" class="relative bg-navy-900 text-white overflow-hidden">
+    <div class="absolute inset-0 opacity-20 bg-[radial-gradient(#FBBF24_1px,transparent_1px)] [background-size:24px_24px]"></div>
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 lg:py-28 relative z-10 grid lg:grid-cols-12 gap-12 items-center">
+      <div class="lg:col-span-7 space-y-6">
+        <div class="inline-flex items-center gap-2 bg-navy-800/90 border border-gold-400/30 text-gold-400 text-xs font-bold uppercase tracking-wider px-4 py-1.5 rounded-full">
+          <span>Bairro Mansour • Uberlândia - MG</span>
+        </div>
+        <h1 class="font-serif text-3xl sm:text-5xl font-bold leading-tight">
+          Acolhimento, dignidade e transformação social para nossa comunidade.
+        </h1>
+        <p class="text-slate-300 text-base sm:text-lg leading-relaxed max-w-2xl">
+          A <strong class="text-white">Associação Grupo Guerreiros de Maria</strong> atua fortalecendo vínculos familiares, promovendo cidadania, educação e apoio solidário aos moradores do bairro Mansour e região.
+        </p>
+        <div class="flex flex-wrap gap-4 pt-2">
+          <a href="#doar" class="bg-gold-500 hover:bg-gold-600 text-white font-bold px-7 py-3.5 rounded-xl shadow-lg transition">
+            Quero Apoiar o Projeto
+          </a>
+          <a href="https://wa.me/553491990004?text=Ol%C3%A1!%20Gostaria%20de%20entrar%20em%20contato%20com%20a%20Associa%C3%A7%C3%A3o%20Grupo%20Guerreiros%20de%20Maria." target="_blank" rel="noopener" class="bg-emerald-600 hover:bg-emerald-700 text-white font-semibold px-7 py-3.5 rounded-xl shadow-lg transition">
+            Falar pelo WhatsApp
+          </a>
+        </div>
       </div>
-    </section>
 
-    <section id="sobre" class="secao">
-      <h2>Sobre a Casa</h2>
-      <p>[EDITAR: história da casa, quando foi fundada, quem são os dirigentes e a missão.]</p>
-      <div class="cards">
-        <div class="card"><h3>Fé</h3><p>[EDITAR]</p></div>
-        <div class="card"><h3>Acolhimento</h3><p>[EDITAR]</p></div>
-        <div class="card"><h3>Caridade</h3><p>[EDITAR]</p></div>
+      <div class="lg:col-span-5">
+        <div class="bg-navy-800/80 backdrop-blur border border-white/10 rounded-3xl p-7 shadow-2xl space-y-5">
+          <div class="flex items-center justify-between border-b border-white/10 pb-4">
+            <span class="font-serif font-bold text-lg text-gold-400">Visite Nossa Sede</span>
+            <span class="text-xs bg-emerald-500/20 text-emerald-300 border border-emerald-500/30 px-3 py-1 rounded-full font-semibold">Acessível</span>
+          </div>
+          <div class="space-y-3 text-sm text-slate-200">
+            <p><strong class="text-white">Endereço:</strong> Av. Rio Jáguari, 1860 - Bairro Mansour, Uberlândia - MG, CEP 38414-458</p>
+            <p><strong class="text-white">WhatsApp Oficial:</strong> <a href="https://wa.me/553491990004" target="_blank" rel="noopener" class="text-gold-400 hover:underline font-semibold">(34) 9199-0004</a></p>
+            <p><strong class="text-white">Estrutura:</strong> Entrada nivelada e acessível para cadeirantes e pessoas com mobilidade reduzida.</p>
+          </div>
+          <a href="https://www.google.com/maps/search/?api=1&query=Av.+Rio+Jaguari,+1860+-+Mansour,+Uberlandia+-+MG,+38414-458" target="_blank" rel="noopener" class="block w-full text-center bg-white text-navy-900 hover:bg-sand-100 font-bold py-3 rounded-xl transition">
+            Abrir Rota no Google Maps
+          </a>
+        </div>
       </div>
-    </section>
+    </div>
+  </section>
 
-    <section id="agenda" class="secao secao-alt">
-      <h2>Agenda</h2>
-      <ul class="agenda">
-        <li><span class="dia">[Dia]</span><span class="hora">[Horário]</span><span class="evento">[EDITAR: atividade]</span></li>
-        <li><span class="dia">[Dia]</span><span class="hora">[Horário]</span><span class="evento">[EDITAR: atividade]</span></li>
-        <li><span class="dia">[Dia]</span><span class="hora">[Horário]</span><span class="evento">[EDITAR: atividade]</span></li>
-      </ul>
-    </section>
-
-    <section id="galeria" class="secao">
-      <h2>Galeria</h2>
-      <p class="nota">Coloque as fotos na pasta <code>img/galeria/</code> e troque os quadros abaixo.</p>
-      <div class="galeria">
-        <div class="foto"></div><div class="foto"></div><div class="foto"></div>
-        <div class="foto"></div><div class="foto"></div><div class="foto"></div>
+  <!-- Sobre Nós -->
+  <section id="sobre" class="py-20 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
+    <div class="grid lg:grid-cols-2 gap-12 items-center">
+      <div class="space-y-5">
+        <span class="text-gold-600 font-bold text-sm uppercase tracking-wider">Quem Somos</span>
+        <h2 class="font-serif text-3xl sm:text-4xl font-bold text-navy-900">Uma rede de solidariedade construída junto com o bairro Mansour.</h2>
+        <p class="text-slate-600 leading-relaxed">
+          Nascida do compromisso comunitário em Uberlândia, a <strong>Associação Grupo Guerreiros de Maria</strong> reúne voluntários, moradores e parceiros dedicados a oferecer suporte social, orientação e atividades formativas para crianças, jovens, adultos e idosos.
+        </p>
+        <p class="text-slate-600 leading-relaxed">
+          Nossa sede está de portas abertas na Av. Rio Jáguari, 1860, promovendo o acolhimento digno e a cidadania ativa de todas as famílias atendidas.
+        </p>
       </div>
-    </section>
 
-    <section id="contato" class="secao secao-alt">
-      <h2>Contato</h2>
-      <div class="contato">
-        <p><strong>Endereço:</strong> [EDITAR]</p>
-        <p><strong>WhatsApp:</strong> [EDITAR]</p>
-        <p><strong>Instagram:</strong> [EDITAR]</p>
-        <a class="botao" id="whatsapp" href="#">Falar no WhatsApp</a>
+      <div class="grid sm:grid-cols-2 gap-5">
+        <div class="bg-white p-6 rounded-2xl border border-sand-200 shadow-sm">
+          <div class="w-10 h-10 rounded-lg bg-navy-900 text-gold-400 flex items-center justify-center font-bold mb-4">01</div>
+          <h3 class="font-serif font-bold text-navy-900 text-lg mb-2">Missão</h3>
+          <p class="text-sm text-slate-600">Promover inclusão social, acolhimento humano e desenvolvimento comunitário no setor oeste de Uberlândia.</p>
+        </div>
+        <div class="bg-white p-6 rounded-2xl border border-sand-200 shadow-sm">
+          <div class="w-10 h-10 rounded-lg bg-navy-900 text-gold-400 flex items-center justify-center font-bold mb-4">02</div>
+          <h3 class="font-serif font-bold text-navy-900 text-lg mb-2">Visão</h3>
+          <p class="text-sm text-slate-600">Ser referência de transparência, cidadania ativa e transformação de vidas para as famílias atendidas.</p>
+        </div>
+        <div class="bg-white p-6 rounded-2xl border border-sand-200 shadow-sm sm:col-span-2">
+          <div class="w-10 h-10 rounded-lg bg-gold-500 text-white flex items-center justify-center font-bold mb-4">03</div>
+          <h3 class="font-serif font-bold text-navy-900 text-lg mb-2">Valores & Acessibilidade</h3>
+          <p class="text-sm text-slate-600">Respeito à dignidade humana, trabalho voluntário ético, prestação de contas transparente e portas abertas com acessibilidade física a todos.</p>
+        </div>
       </div>
-    </section>
-  </main>
+    </div>
+  </section>
 
-  <footer class="rodape">
-    <p>© <span id="ano"></span> Casa Guerreiros de Maria</p>
+  <!-- Atividades e Projetos -->
+  <section id="atividades" class="py-20 bg-sand-100 border-y border-sand-200 px-4 sm:px-6 lg:px-8">
+    <div class="max-w-7xl mx-auto">
+      <div class="flex flex-col md:flex-row md:items-end justify-between mb-10 gap-4">
+        <div>
+          <span class="text-gold-600 font-bold text-sm uppercase tracking-wider">Nossa Atuação</span>
+          <h2 class="font-serif text-3xl sm:text-4xl font-bold text-navy-900 mt-1">Frentes de Trabalho & Projetos</h2>
+        </div>
+        <div class="flex flex-wrap gap-2" id="filter-buttons">
+          <button onclick="filterProjects('todos')" class="filter-btn active bg-navy-900 text-white px-4 py-2 rounded-xl text-sm font-semibold transition">Todos</button>
+          <button onclick="filterProjects('social')" class="filter-btn bg-white text-slate-700 hover:bg-sand-200 px-4 py-2 rounded-xl text-sm font-semibold transition">Assistência Social</button>
+          <button onclick="filterProjects('educacao')" class="filter-btn bg-white text-slate-700 hover:bg-sand-200 px-4 py-2 rounded-xl text-sm font-semibold transition">Educação & Cultura</button>
+          <button onclick="filterProjects('comunidade')" class="filter-btn bg-white text-slate-700 hover:bg-sand-200 px-4 py-2 rounded-xl text-sm font-semibold transition">Ações Comunitárias</button>
+        </div>
+      </div>
+
+      <div class="grid md:grid-cols-3 gap-6" id="projects-grid">
+        <article data-category="social" class="project-card bg-white rounded-2xl p-6 border border-sand-200 shadow-sm flex flex-col justify-between">
+          <div>
+            <span class="inline-block text-xs font-bold uppercase tracking-wider text-gold-600 bg-amber-50 px-3 py-1 rounded-full mb-3">Assistência Social</span>
+            <h3 class="font-serif font-bold text-xl text-navy-900 mb-2">Apoio Alimentar e Cestas Solidárias</h3>
+            <p class="text-sm text-slate-600 leading-relaxed mb-4">Arrecadação e distribuição organizada de alimentos e itens essenciais para famílias em situação de vulnerabilidade no bairro Mansour.</p>
+          </div>
+          <button onclick="openModal('Apoio Alimentar e Cestas Solidárias', 'As entregas são organizadas mediante cadastro social realizado na sede da Av. Rio Jáguari, 1860. Doações de alimentos não perecíveis podem ser entregues diretamente no local ou combinadas pelo WhatsApp (34) 9199-0004.')" class="text-navy-900 font-bold text-sm hover:text-gold-600 inline-flex items-center gap-1">
+            Ver detalhes →
+          </button>
+        </article>
+
+        <article data-category="educacao" class="project-card bg-white rounded-2xl p-6 border border-sand-200 shadow-sm flex flex-col justify-between">
+          <div>
+            <span class="inline-block text-xs font-bold uppercase tracking-wider text-navy-900 bg-slate-100 px-3 py-1 rounded-full mb-3">Educação & Cultura</span>
+            <h3 class="font-serif font-bold text-xl text-navy-900 mb-2">Oficinas Formativas e Convivência</h3>
+            <p class="text-sm text-slate-600 leading-relaxed mb-4">Atividades culturais, rodas de conversa, reforço educativo e capacitação voltada ao fortalecimento de vínculos e geração de renda.</p>
+          </div>
+          <button onclick="openModal('Oficinas Formativas e Convivência', 'As oficinas acontecem com apoio de voluntários da comunidade. Fale conosco pelo WhatsApp (34) 9199-0004 para consultar as atividades ou propor uma oficina voluntária.')" class="text-navy-900 font-bold text-sm hover:text-gold-600 inline-flex items-center gap-1">
+            Ver detalhes →
+          </button>
+        </article>
+
+        <article data-category="comunidade" class="project-card bg-white rounded-2xl p-6 border border-sand-200 shadow-sm flex flex-col justify-between">
+          <div>
+            <span class="inline-block text-xs font-bold uppercase tracking-wider text-emerald-700 bg-emerald-50 px-3 py-1 rounded-full mb-3">Ações Comunitárias</span>
+            <h3 class="font-serif font-bold text-xl text-navy-900 mb-2">Mutirões e Datas Comemorativas</h3>
+            <p class="text-sm text-slate-600 leading-relaxed mb-4">Campanhas sazonais de agasalho, Dia das Crianças, Natal Solidário e ações de orientação cidadã abertas a toda a vizinhança.</p>
+          </div>
+          <button onclick="openModal('Mutirões e Datas Comemorativas', 'Durante todo o ano mobilizamos parceiros locais de Uberlândia para eventos comunitários gratuitos na sede do bairro Mansour.')" class="text-navy-900 font-bold text-sm hover:text-gold-600 inline-flex items-center gap-1">
+            Ver detalhes →
+          </button>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- Galeria de Fotos e Vídeos -->
+  <section id="galeria" class="py-20 bg-white border-t border-sand-200 px-4 sm:px-6 lg:px-8">
+    <div class="max-w-7xl mx-auto">
+      <div class="flex flex-col md:flex-row md:items-end justify-between mb-10 gap-4">
+        <div>
+          <span class="text-gold-600 font-bold text-sm uppercase tracking-wider">Registros da Casa</span>
+          <h2 class="font-serif text-3xl sm:text-4xl font-bold text-navy-900 mt-1">Fotos e Vídeos das Nossas Ações</h2>
+          <p class="text-sm text-slate-600 mt-2 max-w-2xl">Momentos reais das entregas, oficinas, mutirões e encontros da Associação Grupo Guerreiros de Maria no bairro Mansour.</p>
+        </div>
+        <div class="flex flex-wrap gap-2">
+          <button onclick="filterMedia('todos')" class="media-filter-btn bg-navy-900 text-white px-4 py-2 rounded-xl text-sm font-semibold transition">Tudo</button>
+          <button onclick="filterMedia('foto')" class="media-filter-btn bg-sand-100 text-slate-700 hover:bg-sand-200 px-4 py-2 rounded-xl text-sm font-semibold transition">Fotos</button>
+          <button onclick="filterMedia('video')" class="media-filter-btn bg-sand-100 text-slate-700 hover:bg-sand-200 px-4 py-2 rounded-xl text-sm font-semibold transition">Vídeos</button>
+        </div>
+      </div>
+
+      <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6" id="media-grid">
+        <!-- Foto 1: Fachada e Placa AGGM 1860 -->
+        <figure data-type="foto" class="media-item group bg-sand-50 rounded-2xl overflow-hidden border border-sand-200 shadow-sm">
+          <div class="relative aspect-[4/3] bg-navy-900 overflow-hidden">
+            <img src="fotos/fachada-1860.webp" alt="Fachada da sede da AGGM - Associação Grupo Guerreiros de Maria no número 1860" class="w-full h-full object-cover group-hover:scale-105 transition duration-300" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';" />
+            <div class="hidden w-full h-full items-center justify-center p-4 text-center text-xs text-slate-300">
+              Salve a foto em <code class="text-gold-400 mx-1">fotos/fachada-1860.webp</code>
+            </div>
+          </div>
+          <figcaption class="p-4">
+            <span class="text-[11px] font-bold uppercase tracking-wider text-gold-600">Foto • Sede</span>
+            <h3 class="font-serif font-bold text-navy-900 text-base mt-0.5">Fachada da Sede — Nº 1860</h3>
+            <p class="text-xs text-slate-600 mt-1">Identificação oficial AGGM – Associação Grupo Guerreiros de Maria no bairro Mansour.</p>
+          </figcaption>
+        </figure>
+
+        <!-- Foto 2: Painel Guerreiros de Maria no Muro -->
+        <figure data-type="foto" class="media-item group bg-sand-50 rounded-2xl overflow-hidden border border-sand-200 shadow-sm">
+          <div class="relative aspect-[4/3] bg-navy-900 overflow-hidden">
+            <img src="fotos/painel-sede.webp" alt="Painel Guerreiros de Maria fixado no muro da associação" class="w-full h-full object-cover group-hover:scale-105 transition duration-300" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';" />
+            <div class="hidden w-full h-full items-center justify-center p-4 text-center text-xs text-slate-300">
+              Salve a foto em <code class="text-gold-400 mx-1">fotos/painel-sede.webp</code>
+            </div>
+          </div>
+          <figcaption class="p-4">
+            <span class="text-[11px] font-bold uppercase tracking-wider text-gold-600">Foto • Identidade</span>
+            <h3 class="font-serif font-bold text-navy-900 text-base mt-0.5">Painel Institucional Guerreiros de Maria</h3>
+            <p class="text-xs text-slate-600 mt-1">Registro visual da identidade da casa na fachada da associação em Uberlândia.</p>
+          </figcaption>
+        </figure>
+
+        <!-- Foto 3: Parceria Mesa Brasil Sesc -->
+        <figure data-type="foto" class="media-item group bg-sand-50 rounded-2xl overflow-hidden border border-sand-200 shadow-sm">
+          <div class="relative aspect-[4/3] bg-navy-900 overflow-hidden">
+            <img src="fotos/mesa-brasil-sesc.webp" alt="Representante com caminhão miniatura do programa Mesa Brasil Sesc" class="w-full h-full object-cover group-hover:scale-105 transition duration-300" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';" />
+            <div class="hidden w-full h-full items-center justify-center p-4 text-center text-xs text-slate-300">
+              Salve a foto em <code class="text-gold-400 mx-1">fotos/mesa-brasil-sesc.webp</code>
+            </div>
+          </div>
+          <figcaption class="p-4">
+            <span class="text-[11px] font-bold uppercase tracking-wider text-gold-600">Foto • Arrecadação</span>
+            <h3 class="font-serif font-bold text-navy-900 text-base mt-0.5">Apoio Alimentar e Parcerias</h3>
+            <p class="text-xs text-slate-600 mt-1">Mobilização solidária voltada ao combate à fome e apoio às famílias.</p>
+          </figcaption>
+        </figure>
+
+        <!-- Foto 4: Solenidade e Reconhecimento Institucional -->
+        <figure data-type="foto" class="media-item group bg-sand-50 rounded-2xl overflow-hidden border border-sand-200 shadow-sm">
+          <div class="relative aspect-[4/3] bg-navy-900 overflow-hidden">
+            <img src="fotos/solenidade-camara.webp" alt="Representante da associação em solenidade oficial com bandeiras" class="w-full h-full object-cover group-hover:scale-105 transition duration-300" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';" />
+            <div class="hidden w-full h-full items-center justify-center p-4 text-center text-xs text-slate-300">
+              Salve a foto em <code class="text-gold-400 mx-1">fotos/solenidade-camara.webp</code>
+            </div>
+          </div>
+          <figcaption class="p-4">
+            <span class="text-[11px] font-bold uppercase tracking-wider text-gold-600">Foto • Cidadania</span>
+            <h3 class="font-serif font-bold text-navy-900 text-base mt-0.5">Representação e Reconhecimento</h3>
+            <p class="text-xs text-slate-600 mt-1">Participação institucional em cerimônia pública em Uberlândia - MG.</p>
+          </figcaption>
+        </figure>
+
+        <!-- Foto 5: Homenagem Oficial -->
+        <figure data-type="foto" class="media-item group bg-sand-50 rounded-2xl overflow-hidden border border-sand-200 shadow-sm">
+          <div class="relative aspect-[4/3] bg-navy-900 overflow-hidden">
+            <img src="fotos/homenagem-institucional.webp" alt="Homenagem e certificado institucional da associação" class="w-full h-full object-cover group-hover:scale-105 transition duration-300" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';" />
+            <div class="hidden w-full h-full items-center justify-center p-4 text-center text-xs text-slate-300">
+              Salve a foto em <code class="text-gold-400 mx-1">fotos/homenagem-institucional.webp</code>
+            </div>
+          </div>
+          <figcaption class="p-4">
+            <span class="text-[11px] font-bold uppercase tracking-wider text-gold-600">Foto • Conquistas</span>
+            <h3 class="font-serif font-bold text-navy-900 text-base mt-0.5">Homenagem e Participação Comunitária</h3>
+            <p class="text-xs text-slate-600 mt-1">Registro de homenagem recebida em evento oficial no município.</p>
+          </figcaption>
+        </figure>
+
+        <!-- Vídeo 1: Vídeo Local ou Link -->
+        <figure data-type="video" class="media-item bg-sand-50 rounded-2xl overflow-hidden border border-sand-200 shadow-sm">
+          <div class="relative aspect-[4/3] bg-navy-950 flex items-center justify-center">
+            <video controls preload="metadata" class="w-full h-full object-cover" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+              <source src="videos/acao-guerreiros.mp4" type="video/mp4" />
+            </video>
+            <div class="hidden w-full h-full flex-col items-center justify-center p-4 text-center text-xs text-slate-300 gap-2">
+              <span>Coloque o arquivo de vídeo em <code class="text-gold-400">videos/acao-guerreiros.mp4</code></span>
+              <span class="text-[11px] text-slate-400">Ou substitua por um embed do YouTube.</span>
+            </div>
+          </div>
+          <figcaption class="p-4">
+            <span class="text-[11px] font-bold uppercase tracking-wider text-emerald-700">Vídeo • Registros</span>
+            <h3 class="font-serif font-bold text-navy-900 text-base mt-0.5">Vídeo das Ações da Associação</h3>
+            <p class="text-xs text-slate-600 mt-1">Espaço pronto para exibir o vídeo das atividades e encontros do grupo.</p>
+          </figcaption>
+        </figure>
+      </div>
+    </div>
+  </section>
+
+  <!-- Como Ajudar & Doações -->
+  <section id="doar" class="py-20 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
+    <div class="bg-navy-900 rounded-3xl p-8 sm:p-12 text-white shadow-xl grid lg:grid-cols-12 gap-10 items-center">
+      <div class="lg:col-span-6 space-y-5">
+        <span class="text-gold-400 font-bold text-sm uppercase tracking-wider">Faça Parte dessa Corrente</span>
+        <h2 class="font-serif text-3xl sm:text-4xl font-bold">Sua contribuição mantém nossas portas abertas.</h2>
+        <p class="text-slate-300 text-sm sm:text-base leading-relaxed">
+          Você pode apoiar a <strong>Associação Grupo Guerreiros de Maria</strong> com doações financeiras via PIX, entrega de alimentos/roupas na nossa sede ou atuando como voluntário.
+        </p>
+
+        <div class="bg-navy-800 border border-white/10 rounded-2xl p-5 space-y-3">
+          <div class="flex items-center justify-between">
+            <span class="text-xs uppercase tracking-wider text-gold-400 font-bold">Chave PIX Oficial (CNPJ)</span>
+            <span class="text-xs text-slate-400">PIX CNPJ</span>
+          </div>
+          <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-3 bg-navy-950/70 p-3.5 rounded-xl border border-white/10">
+            <code id="pix-key" class="text-sm text-amber-200 font-mono break-all">49.332.769/0001-04</code>
+            <button onclick="copyPix()" class="bg-gold-500 hover:bg-gold-600 text-white text-xs font-bold px-4 py-2 rounded-lg shrink-0 transition">
+              Copiar Chave
+            </button>
+          </div>
+          <p class="text-xs text-slate-400">Titular: Associação Grupo Guerreiros de Maria • CNPJ: 49.332.769/0001-04</p>
+        </div>
+      </div>
+
+      <!-- Formulário de Voluntariado -->
+      <div class="lg:col-span-6 bg-white text-slate-800 rounded-2xl p-6 sm:p-8 shadow-lg">
+        <h3 class="font-serif font-bold text-2xl text-navy-900 mb-2">Seja Voluntário ou Parceiro</h3>
+        <p class="text-sm text-slate-600 mb-5">Preencha os campos abaixo para iniciar o atendimento direto no nosso WhatsApp.</p>
+        <form onsubmit="handleVolunteerSubmit(event)" class="space-y-4">
+          <div>
+            <label class="block text-xs font-bold uppercase text-slate-600 mb-1">Nome Completo</label>
+            <input id="vol-nome" type="text" required placeholder="Seu nome" class="w-full px-4 py-2.5 rounded-xl border border-slate-300 focus:outline-none focus:border-navy-900 text-sm" />
+          </div>
+          <div class="grid sm:grid-cols-2 gap-4">
+            <div>
+              <label class="block text-xs font-bold uppercase text-slate-600 mb-1">Seu WhatsApp / Telefone</label>
+              <input id="vol-tel" type="tel" required placeholder="(34) 99999-9999" class="w-full px-4 py-2.5 rounded-xl border border-slate-300 focus:outline-none focus:border-navy-900 text-sm" />
+            </div>
+            <div>
+              <label class="block text-xs font-bold uppercase text-slate-600 mb-1">Como deseja ajudar?</label>
+              <select id="vol-tipo" class="w-full px-4 py-2.5 rounded-xl border border-slate-300 focus:outline-none focus:border-navy-900 text-sm bg-white">
+                <option>Trabalho Voluntário</option>
+                <option>Doação de Alimentos / Itens</option>
+                <option>Parceria Empresarial</option>
+                <option>Ministrar Oficina / Curso</option>
+              </select>
+            </div>
+          </div>
+          <div>
+            <label class="block text-xs font-bold uppercase text-slate-600 mb-1">Mensagem (opcional)</label>
+            <textarea id="vol-msg" rows="2" placeholder="Conte sua disponibilidade..." class="w-full px-4 py-2.5 rounded-xl border border-slate-300 focus:outline-none focus:border-navy-900 text-sm"></textarea>
+          </div>
+          <button type="submit" class="w-full bg-emerald-600 hover:bg-emerald-700 text-white font-bold py-3 rounded-xl transition">
+            Enviar pelo WhatsApp (34) 9199-0004
+          </button>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <!-- Transparência -->
+  <section id="transparencia" class="py-16 bg-white border-t border-sand-200 px-4 sm:px-6 lg:px-8">
+    <div class="max-w-7xl mx-auto">
+      <div class="max-w-2xl mb-10">
+        <span class="text-gold-600 font-bold text-sm uppercase tracking-wider">Prestação de Contas</span>
+        <h2 class="font-serif text-3xl font-bold text-navy-900 mt-1">Transparência Institucional</h2>
+        <p class="text-sm text-slate-600 mt-2">Compromisso ético com doadores, poder público e moradores do bairro Mansour.</p>
+      </div>
+      <div class="grid sm:grid-cols-3 gap-6">
+        <div class="p-5 rounded-2xl bg-sand-50 border border-sand-200">
+          <h3 class="font-bold text-navy-900 mb-1">Estatuto & Ata da Diretoria</h3>
+          <p class="text-xs text-slate-600 mb-3">Documentação constitutiva da entidade sem fins lucrativos.</p>
+          <a href="https://wa.me/553491990004?text=Ol%C3%A1!%20Gostaria%20de%20solicitar%20informa%C3%A7%C3%B5es%20institucionais%20da%20Associa%C3%A7%C3%A3o." target="_blank" rel="noopener" class="text-xs font-semibold text-navy-900 hover:text-gold-600 underline">Solicitar via WhatsApp →</a>
+        </div>
+        <div class="p-5 rounded-2xl bg-sand-50 border border-sand-200">
+          <h3 class="font-bold text-navy-900 mb-1">Relatório de Atividades</h3>
+          <p class="text-xs text-slate-600 mb-3">Resumo das ações comunitárias, campanhas e atendimentos realizados.</p>
+          <a href="https://wa.me/553491990004?text=Ol%C3%A1!%20Gostaria%20de%20conhecer%20os%20relat%C3%B3rios%20de%20atividades%20da%20Associa%C3%A7%C3%A3o." target="_blank" rel="noopener" class="text-xs font-semibold text-navy-900 hover:text-gold-600 underline">Solicitar via WhatsApp →</a>
+        </div>
+        <div class="p-5 rounded-2xl bg-sand-50 border border-sand-200">
+          <h3 class="font-bold text-navy-900 mb-1">Dados Cadastrais</h3>
+          <p class="text-xs text-slate-600">CNPJ: 49.332.769/0001-04<br/>Sede: Av. Rio Jáguari, 1860 - Mansour</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Localização & Contato -->
+  <section id="contato" class="py-20 bg-sand-100 border-t border-sand-200 px-4 sm:px-6 lg:px-8">
+    <div class="max-w-7xl mx-auto grid lg:grid-cols-12 gap-8 items-stretch">
+      <div class="lg:col-span-5 bg-white p-8 rounded-3xl border border-sand-200 shadow-sm flex flex-col justify-between space-y-6">
+        <div class="space-y-4">
+          <span class="text-gold-600 font-bold text-sm uppercase tracking-wider">Onde Estamos</span>
+          <h2 class="font-serif text-3xl font-bold text-navy-900">Contato & Endereço</h2>
+          <div class="space-y-3 text-sm text-slate-700">
+            <p><strong>Endereço Completo:</strong><br/>Av. Rio Jáguari, 1860 - Bairro Mansour<br/>Uberlândia - MG, CEP 38414-458</p>
+            <p><strong>Acessibilidade:</strong><br/>Entrada acessível para cadeirantes.</p>
+            <p><strong>Telefone / WhatsApp Oficial:</strong><br/><a href="https://wa.me/553491990004" target="_blank" rel="noopener" class="text-emerald-700 font-bold hover:underline">(34) 9199-0004</a></p>
+          </div>
+        </div>
+        <div class="space-y-3">
+          <a href="https://wa.me/553491990004?text=Ol%C3%A1!%20Gostaria%20de%20falar%20com%20a%20Associa%C3%A7%C3%A3o%20Grupo%20Guerreiros%20de%20Maria." target="_blank" rel="noopener" class="block text-center bg-emerald-600 hover:bg-emerald-700 text-white font-bold py-3 rounded-xl transition">
+            Chamar no WhatsApp (34) 9199-0004
+          </a>
+          <a href="https://www.google.com/maps/search/?api=1&query=Av.+Rio+Jaguari,+1860+-+Mansour,+Uberlandia+-+MG,+38414-458" target="_blank" rel="noopener" class="block text-center bg-navy-900 hover:bg-navy-800 text-white font-bold py-3 rounded-xl transition">
+            Traçar Rota no Google Maps
+          </a>
+        </div>
+      </div>
+
+      <div class="lg:col-span-7 rounded-3xl overflow-hidden border border-sand-200 shadow-sm min-h-[340px] bg-slate-200">
+        <iframe
+          title="Mapa Associação Grupo Guerreiros de Maria"
+          src="https://www.google.com/maps?q=Av.+Rio+Jaguari,+1860+-+Mansour,+Uberlandia+-+MG,+38414-458&output=embed"
+          class="w-full h-full min-h-[340px] border-0"
+          loading="lazy"
+          referrerpolicy="no-referrer-when-downgrade">
+        </iframe>
+      </div>
+    </div>
+  </section>
+
+  <!-- Rodapé -->
+  <footer class="bg-navy-950 text-slate-400 py-10 px-4 sm:px-6 lg:px-8 text-sm">
+    <div class="max-w-7xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-4">
+      <div>
+        <p class="text-white font-serif font-bold">Associação Grupo Guerreiros de Maria</p>
+        <p class="text-xs mt-1">CNPJ: 49.332.769/0001-04 • WhatsApp: (34) 9199-0004 • Av. Rio Jáguari, 1860 - Mansour, Uberlândia - MG</p>
+      </div>
+      <p class="text-xs">© 2026 Associação Grupo Guerreiros de Maria. Todos os direitos reservados.</p>
+    </div>
   </footer>
 
-  <script src="js/main.js"></script>
+  <!-- Botão Flutuante WhatsApp -->
+  <a href="https://wa.me/553491990004?text=Ol%C3%A1!%20Vim%20pelo%20site%20da%20Associa%C3%A7%C3%A3o%20Grupo%20Guerreiros%20de%20Maria." target="_blank" rel="noopener" aria-label="Falar no WhatsApp" class="fixed bottom-5 right-5 z-40 bg-emerald-600 hover:bg-emerald-700 text-white px-4 py-3 rounded-full shadow-2xl flex items-center gap-2 font-bold text-sm transition hover:scale-105">
+    <svg class="w-5 h-5 fill-current" viewBox="0 0 24 24"><path d="M20.52 3.48A11.86 11.86 0 0012.07 0C5.49 0 .14 5.35.14 11.93c0 2.1.55 4.15 1.59 5.96L0 24l6.29-1.65a11.9 11.9 0 005.78 1.47h.01c6.58 0 11.93-5.35 11.93-11.93 0-3.19-1.24-6.18-3.49-8.41zM12.08 21.8h-.01a9.87 9.87 0 01-5.03-1.38l-.36-.21-3.73.98 1-3.64-.24-.37a9.85 9.85 0 01-1.51-5.25c0-5.45 4.43-9.88 9.88-9.88 2.64 0 5.12 1.03 6.98 2.9a9.81 9.81 0 012.89 6.99c0 5.45-4.43 9.86-9.87 9.86zm5.42-7.39c-.3-.15-1.76-.87-2.03-.97-.27-.1-.47-.15-.67.15-.2.3-.77.97-.94 1.16-.17.2-.35.22-.64.07-.3-.15-1.25-.46-2.39-1.47-.88-.79-1.48-1.76-1.65-2.06-.17-.3-.02-.46.13-.61.13-.13.3-.35.45-.52.15-.17.2-.3.3-.5.1-.2.05-.37-.02-.52-.08-.15-.67-1.61-.92-2.21-.24-.58-.49-.5-.67-.51h-.57c-.2 0-.52.07-.79.37-.27.3-1.04 1.02-1.04 2.48s1.07 2.88 1.21 3.07c.15.2 2.1 3.2 5.08 4.49.71.31 1.26.49 1.69.63.71.23 1.36.2 1.87.12.57-.09 1.76-.72 2.01-1.41.25-.7.25-1.29.17-1.41-.07-.13-.27-.2-.57-.35z"/></svg>
+    <span class="hidden sm:inline">WhatsApp</span>
+  </a>
+
+  <!-- Modal Detalhes Projeto -->
+  <div id="project-modal" class="fixed inset-0 z-50 hidden bg-navy-950/70 backdrop-blur-sm flex items-center justify-center p-4">
+    <div class="bg-white rounded-2xl max-w-md w-full p-6 shadow-2xl space-y-4">
+      <div class="flex items-start justify-between gap-4">
+        <h3 id="modal-title" class="font-serif font-bold text-xl text-navy-900"></h3>
+        <button onclick="closeModal()" class="text-slate-400 hover:text-slate-700 font-bold text-xl leading-none">&times;</button>
+      </div>
+      <p id="modal-body" class="text-sm text-slate-600 leading-relaxed"></p>
+      <div class="pt-2 flex justify-end gap-2">
+        <button onclick="closeModal()" class="px-4 py-2 rounded-xl bg-sand-100 hover:bg-sand-200 text-slate-800 text-sm font-semibold">Fechar</button>
+        <a href="#doar" onclick="closeModal()" class="px-4 py-2 rounded-xl bg-navy-900 text-white text-sm font-semibold">Quero Apoiar</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Toast Notificação -->
+  <div id="toast" class="fixed bottom-20 right-5 z-50 hidden bg-navy-900 text-white text-sm font-semibold px-5 py-3 rounded-xl shadow-xl border border-gold-400/40"></div>
+
+  <script>
+    let largeFont = false;
+    function toggleFontSize() {
+      largeFont = !largeFont;
+      document.documentElement.style.fontSize = largeFont ? '18px' : '16px';
+      showToast(largeFont ? 'Tamanho da fonte aumentado' : 'Tamanho da fonte padrão');
+    }
+
+    function toggleMobileMenu() {
+      document.getElementById('mobile-menu').classList.toggle('hidden');
+    }
+
+    function filterMedia(type) {
+      const items = document.querySelectorAll('.media-item');
+      const buttons = document.querySelectorAll('.media-filter-btn');
+      buttons.forEach(btn => {
+        btn.classList.remove('bg-navy-900', 'text-white');
+        btn.classList.add('bg-sand-100', 'text-slate-700');
+      });
+      event.target.classList.remove('bg-sand-100', 'text-slate-700');
+      event.target.classList.add('bg-navy-900', 'text-white');
+
+      items.forEach(item => {
+        if (type === 'todos' || item.dataset.type === type) {
+          item.classList.remove('hidden');
+        } else {
+          item.classList.add('hidden');
+        }
+      });
+    }
+
+    function filterProjects(category) {
+      const cards = document.querySelectorAll('.project-card');
+      const buttons = document.querySelectorAll('.filter-btn');
+      buttons.forEach(btn => {
+        btn.classList.remove('bg-navy-900', 'text-white');
+        btn.classList.add('bg-white', 'text-slate-700');
+      });
+      event.target.classList.remove('bg-white', 'text-slate-700');
+      event.target.classList.add('bg-navy-900', 'text-white');
+
+      cards.forEach(card => {
+        if (category === 'todos' || card.dataset.category === category) {
+          card.classList.remove('hidden');
+        } else {
+          card.classList.add('hidden');
+        }
+      });
+    }
+
+    function openModal(title, body) {
+      document.getElementById('modal-title').textContent = title;
+      document.getElementById('modal-body').textContent = body;
+      document.getElementById('project-modal').classList.remove('hidden');
+    }
+
+    function closeModal() {
+      document.getElementById('project-modal').classList.add('hidden');
+    }
+
+    function copyPix() {
+      const key = document.getElementById('pix-key').textContent;
+      navigator.clipboard.writeText(key);
+      showToast('Chave PIX (CNPJ) copiada para a área de transferência!');
+    }
+
+    function handleVolunteerSubmit(e) {
+      e.preventDefault();
+      const nome = document.getElementById('vol-nome').value.trim();
+      const tel = document.getElementById('vol-tel').value.trim();
+      const tipo = document.getElementById('vol-tipo').value;
+      const msg = document.getElementById('vol-msg').value.trim();
+      const texto = `Olá! Vim pelo site da Associação Grupo Guerreiros de Maria.%0A*Nome:* ${encodeURIComponent(nome)}%0A*Telefone:* ${encodeURIComponent(tel)}%0A*Interesse:* ${encodeURIComponent(tipo)}${msg ? '%0A*Mensagem:* ' + encodeURIComponent(msg) : ''}`;
+      window.open(`https://wa.me/553491990004?text=${texto}`, '_blank', 'noopener');
+      e.target.reset();
+    }
+
+    function showToast(msg) {
+      const toast = document.getElementById('toast');
+      toast.textContent = msg;
+      toast.classList.remove('hidden');
+      setTimeout(() => toast.classList.add('hidden'), 3200);
+    }
+  </script>
 </body>
 </html>
