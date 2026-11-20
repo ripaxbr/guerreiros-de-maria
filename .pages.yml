@@ -1,0 +1,108 @@
+# Painel da diretoria (Pages CMS - https://app.pagescms.org)
+media:
+  - name: fotos
+    label: "Fotos"
+    input: fotos
+    output: fotos
+    extensions: [webp, jpg, jpeg, png]
+  - name: videos
+    label: "Vídeos"
+    input: videos
+    output: videos
+    extensions: [mp4, webm]
+
+content:
+  - name: site
+    label: "Informações do site"
+    type: file
+    path: content/site.json
+    format: json
+    fields:
+      - name: contato
+        label: "Contato"
+        type: object
+        fields:
+          - name: whatsapp
+            label: "WhatsApp (só números, com 55 e DDD. Ex.: 553491990004)"
+            type: string
+            required: true
+          - name: whatsapp_exibicao
+            label: "WhatsApp como aparece no site (Ex.: (34) 9199-0004)"
+            type: string
+            required: true
+          - name: email
+            label: "E-mail (deixe em branco para não mostrar)"
+            type: string
+
+      - name: projetos
+        label: "Projetos"
+        type: object
+        list:
+          collapsible:
+            collapsed: true
+            summary: "{titulo}"
+        fields:
+          - name: categoria
+            label: "Categoria"
+            type: select
+            required: true
+            options:
+              values:
+                - name: social
+                  label: "Assistência Social"
+                - name: educacao
+                  label: "Educação & Cultura"
+                - name: comunidade
+                  label: "Ações Comunitárias"
+          - name: titulo
+            label: "Título"
+            type: string
+            required: true
+          - name: resumo
+            label: "Resumo (aparece no cartão)"
+            type: text
+          - name: detalhes
+            label: "Detalhes (aparece ao clicar em \"Ver detalhes\")"
+            type: text
+
+      - name: galeria
+        label: "Fotos e vídeos"
+        type: object
+        list:
+          collapsible:
+            collapsed: true
+            summary: "{titulo}"
+        fields:
+          - name: tipo
+            label: "Tipo"
+            type: select
+            required: true
+            options:
+              values:
+                - name: foto
+                  label: "Foto"
+                - name: video
+                  label: "Vídeo"
+          - name: titulo
+            label: "Título"
+            type: string
+            required: true
+          - name: etiqueta
+            label: "Etiqueta (Ex.: Sede, Arrecadação)"
+            type: string
+          - name: legenda
+            label: "Legenda"
+            type: text
+          - name: imagem
+            label: "Foto (para tipo Foto)"
+            type: image
+            options:
+              media: fotos
+          - name: video
+            label: "Arquivo de vídeo (para tipo Vídeo - arquivos curtos)"
+            type: file
+            options:
+              media: videos
+          - name: youtube
+            label: "Link do YouTube (para tipo Vídeo - tem prioridade sobre o arquivo)"
+            type: string

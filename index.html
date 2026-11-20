@@ -141,7 +141,7 @@
           </div>
           <div class="space-y-3 text-sm text-slate-200">
             <p><strong class="text-white">Endereço:</strong> Av. Rio Jáguari, 1860 - Bairro Mansour, Uberlândia - MG, CEP 38414-458</p>
-            <p><strong class="text-white">WhatsApp Oficial:</strong> <a href="https://wa.me/553491990004" target="_blank" rel="noopener" class="text-gold-400 hover:underline font-semibold">(34) 9199-0004</a></p>
+            <p><strong class="text-white">WhatsApp Oficial:</strong> <a href="https://wa.me/553491990004" target="_blank" rel="noopener" class="text-gold-400 hover:underline font-semibold"><span data-campo="whatsapp">(34) 9199-0004</span></a></p>
             <p><strong class="text-white">Estrutura:</strong> Entrada nivelada e acessível para cadeirantes e pessoas com mobilidade reduzida.</p>
           </div>
           <a href="https://www.google.com/maps/search/?api=1&query=Av.+Rio+Jaguari,+1860+-+Mansour,+Uberlandia+-+MG,+38414-458" target="_blank" rel="noopener" class="block w-full text-center bg-white text-navy-900 hover:bg-sand-100 font-bold py-3 rounded-xl transition">
@@ -406,7 +406,7 @@
             <textarea id="vol-msg" rows="2" placeholder="Conte sua disponibilidade..." class="w-full px-4 py-2.5 rounded-xl border border-slate-300 focus:outline-none focus:border-navy-900 text-sm"></textarea>
           </div>
           <button type="submit" class="w-full bg-emerald-600 hover:bg-emerald-700 text-white font-bold py-3 rounded-xl transition">
-            Enviar pelo WhatsApp (34) 9199-0004
+            Enviar pelo WhatsApp <span data-campo="whatsapp">(34) 9199-0004</span>
           </button>
         </form>
       </div>
@@ -450,12 +450,13 @@
           <div class="space-y-3 text-sm text-slate-700">
             <p><strong>Endereço Completo:</strong><br/>Av. Rio Jáguari, 1860 - Bairro Mansour<br/>Uberlândia - MG, CEP 38414-458</p>
             <p><strong>Acessibilidade:</strong><br/>Entrada acessível para cadeirantes.</p>
-            <p><strong>Telefone / WhatsApp Oficial:</strong><br/><a href="https://wa.me/553491990004" target="_blank" rel="noopener" class="text-emerald-700 font-bold hover:underline">(34) 9199-0004</a></p>
+            <p><strong>Telefone / WhatsApp Oficial:</strong><br/><a href="https://wa.me/553491990004" target="_blank" rel="noopener" class="text-emerald-700 font-bold hover:underline"><span data-campo="whatsapp">(34) 9199-0004</span></a></p>
+            <p data-email-bloco class="hidden"><strong>E-mail:</strong><br/><a data-campo-email href="#" class="text-navy-900 font-bold hover:underline"></a></p>
           </div>
         </div>
         <div class="space-y-3">
           <a href="https://wa.me/553491990004?text=Ol%C3%A1!%20Gostaria%20de%20falar%20com%20a%20Associa%C3%A7%C3%A3o%20Grupo%20Guerreiros%20de%20Maria." target="_blank" rel="noopener" class="block text-center bg-emerald-600 hover:bg-emerald-700 text-white font-bold py-3 rounded-xl transition">
-            Chamar no WhatsApp (34) 9199-0004
+            Chamar no WhatsApp <span data-campo="whatsapp">(34) 9199-0004</span>
           </a>
           <a href="https://www.google.com/maps/search/?api=1&query=Av.+Rio+Jaguari,+1860+-+Mansour,+Uberlandia+-+MG,+38414-458" target="_blank" rel="noopener" class="block text-center bg-navy-900 hover:bg-navy-800 text-white font-bold py-3 rounded-xl transition">
             Traçar Rota no Google Maps
@@ -480,7 +481,7 @@
     <div class="max-w-7xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-4">
       <div>
         <p class="text-white font-serif font-bold">Associação Grupo Guerreiros de Maria</p>
-        <p class="text-xs mt-1">CNPJ: 49.332.769/0001-04 • WhatsApp: (34) 9199-0004 • Av. Rio Jáguari, 1860 - Mansour, Uberlândia - MG</p>
+        <p class="text-xs mt-1">CNPJ: 49.332.769/0001-04 • WhatsApp: <span data-campo="whatsapp">(34) 9199-0004</span> •<span data-email-bloco class="hidden"> E-mail: <span data-campo-email-texto></span> •</span> Av. Rio Jáguari, 1860 - Mansour, Uberlândia - MG</p>
       </div>
       <p class="text-xs">© 2026 Associação Grupo Guerreiros de Maria. Todos os direitos reservados.</p>
     </div>
@@ -583,7 +584,7 @@
       const tipo = document.getElementById('vol-tipo').value;
       const msg = document.getElementById('vol-msg').value.trim();
       const texto = `Olá! Vim pelo site da Associação Grupo Guerreiros de Maria.%0A*Nome:* ${encodeURIComponent(nome)}%0A*Telefone:* ${encodeURIComponent(tel)}%0A*Interesse:* ${encodeURIComponent(tipo)}${msg ? '%0A*Mensagem:* ' + encodeURIComponent(msg) : ''}`;
-      window.open(`https://wa.me/553491990004?text=${texto}`, '_blank', 'noopener');
+      window.open(`https://wa.me/${window.WHATSAPP_NUM || '553491990004'}?text=${texto}`, '_blank', 'noopener');
       e.target.reset();
     }
 
@@ -594,5 +595,6 @@
       setTimeout(() => toast.classList.add('hidden'), 3200);
     }
   </script>
+  <script src="js/conteudo.js"></script>
 </body>
 </html>

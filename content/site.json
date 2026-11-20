@@ -1,0 +1,83 @@
+{
+  "contato": {
+    "whatsapp": "553491990004",
+    "whatsapp_exibicao": "(34) 9199-0004",
+    "email": ""
+  },
+  "projetos": [
+    {
+      "categoria": "social",
+      "titulo": "Apoio Alimentar e Cestas Solidárias",
+      "resumo": "Arrecadação e distribuição organizada de alimentos e itens essenciais para famílias em situação de vulnerabilidade no bairro Mansour.",
+      "detalhes": "As entregas são organizadas mediante cadastro social realizado na sede da Av. Rio Jáguari, 1860. Doações de alimentos não perecíveis podem ser entregues diretamente no local ou combinadas pelo WhatsApp (34) 9199-0004."
+    },
+    {
+      "categoria": "educacao",
+      "titulo": "Oficinas Formativas e Convivência",
+      "resumo": "Atividades culturais, rodas de conversa, reforço educativo e capacitação voltada ao fortalecimento de vínculos e geração de renda.",
+      "detalhes": "As oficinas acontecem com apoio de voluntários da comunidade. Fale conosco pelo WhatsApp (34) 9199-0004 para consultar as atividades ou propor uma oficina voluntária."
+    },
+    {
+      "categoria": "comunidade",
+      "titulo": "Mutirões e Datas Comemorativas",
+      "resumo": "Campanhas sazonais de agasalho, Dia das Crianças, Natal Solidário e ações de orientação cidadã abertas a toda a vizinhança.",
+      "detalhes": "Durante todo o ano mobilizamos parceiros locais de Uberlândia para eventos comunitários gratuitos na sede do bairro Mansour."
+    }
+  ],
+  "galeria": [
+    {
+      "tipo": "foto",
+      "etiqueta": "Sede",
+      "titulo": "Fachada da Sede — Nº 1860",
+      "legenda": "Identificação oficial AGGM – Associação Grupo Guerreiros de Maria no bairro Mansour.",
+      "imagem": "fotos/fachada-1860.webp",
+      "video": "",
+      "youtube": ""
+    },
+    {
+      "tipo": "foto",
+      "etiqueta": "Identidade",
+      "titulo": "Painel Institucional Guerreiros de Maria",
+      "legenda": "Registro visual da identidade da casa na fachada da associação em Uberlândia.",
+      "imagem": "fotos/painel-sede.webp",
+      "video": "",
+      "youtube": ""
+    },
+    {
+      "tipo": "foto",
+      "etiqueta": "Arrecadação",
+      "titulo": "Apoio Alimentar e Parcerias",
+      "legenda": "Mobilização solidária voltada ao combate à fome e apoio às famílias.",
+      "imagem": "fotos/mesa-brasil-sesc.webp",
+      "video": "",
+      "youtube": ""
+    },
+    {
+      "tipo": "foto",
+      "etiqueta": "Cidadania",
+      "titulo": "Representação e Reconhecimento",
+      "legenda": "Participação institucional em cerimônia pública em Uberlândia - MG.",
+      "imagem": "fotos/solenidade-camara.webp",
+      "video": "",
+      "youtube": ""
+    },
+    {
+      "tipo": "foto",
+      "etiqueta": "Conquistas",
+      "titulo": "Homenagem e Participação Comunitária",
+      "legenda": "Registro de homenagem recebida em evento oficial no município.",
+      "imagem": "fotos/homenagem-institucional.webp",
+      "video": "",
+      "youtube": ""
+    },
+    {
+      "tipo": "video",
+      "etiqueta": "Registros",
+      "titulo": "Vídeo das Ações da Associação",
+      "legenda": "Espaço pronto para exibir o vídeo das atividades e encontros do grupo.",
+      "imagem": "",
+      "video": "videos/acao-guerreiros.mp4",
+      "youtube": ""
+    }
+  ]
+}
