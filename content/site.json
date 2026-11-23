@@ -2,7 +2,6 @@
   "contato": {
     "whatsapp": "553491990004",
     "whatsapp_exibicao": "(34) 9199-0004",
-    "email": "",
     "google_avaliar": "https://www.google.com/search?q=Associa%C3%A7%C3%A3o+Grupo+Guerreiros+de+Maria+Uberl%C3%A2ndia+avalia%C3%A7%C3%B5es",
     "google_perfil": "https://www.google.com/maps/search/?api=1&query=Associa%C3%A7%C3%A3o+Grupo+Guerreiros+de+Maria+Uberl%C3%A2ndia"
   },
@@ -41,57 +40,51 @@
   "galeria": [
     {
       "tipo": "foto",
-      "etiqueta": "Sede",
       "titulo": "Fachada da Sede — Nº 1860",
+      "etiqueta": "Sede",
       "legenda": "Identificação oficial AGGM – Associação Grupo Guerreiros de Maria no bairro Mansour.",
-      "imagem": "fotos/fachada-1860.webp",
-      "video": "",
-      "youtube": ""
+      "imagem": "fotos/fachada-1860.webp"
     },
     {
       "tipo": "foto",
-      "etiqueta": "Identidade",
       "titulo": "Painel Institucional Guerreiros de Maria",
+      "etiqueta": "Identidade",
       "legenda": "Registro visual da identidade da casa na fachada da associação em Uberlândia.",
-      "imagem": "fotos/painel-sede.webp",
-      "video": "",
-      "youtube": ""
+      "imagem": "fotos/painel-sede.webp"
     },
     {
       "tipo": "foto",
-      "etiqueta": "Arrecadação",
       "titulo": "Apoio Alimentar e Parcerias",
+      "etiqueta": "Arrecadação",
       "legenda": "Mobilização solidária voltada ao combate à fome e apoio às famílias.",
-      "imagem": "fotos/mesa-brasil-sesc.webp",
-      "video": "",
-      "youtube": ""
+      "imagem": "fotos/mesa-brasil-sesc.webp"
     },
     {
       "tipo": "foto",
-      "etiqueta": "Cidadania",
       "titulo": "Representação e Reconhecimento",
+      "etiqueta": "Cidadania",
       "legenda": "Participação institucional em cerimônia pública em Uberlândia - MG.",
-      "imagem": "fotos/solenidade-camara.webp",
-      "video": "",
-      "youtube": ""
+      "imagem": "fotos/solenidade-camara.webp"
     },
     {
       "tipo": "foto",
-      "etiqueta": "Conquistas",
       "titulo": "Homenagem e Participação Comunitária",
+      "etiqueta": "Conquistas",
       "legenda": "Registro de homenagem recebida em evento oficial no município.",
-      "imagem": "fotos/homenagem-institucional.webp",
-      "video": "",
-      "youtube": ""
+      "imagem": "fotos/homenagem-institucional.webp"
     },
     {
       "tipo": "video",
-      "etiqueta": "Registros",
       "titulo": "Vídeo das Ações da Associação",
+      "etiqueta": "Registros",
       "legenda": "Espaço pronto para exibir o vídeo das atividades e encontros do grupo.",
-      "imagem": "",
-      "video": "videos/acao-guerreiros.mp4",
-      "youtube": ""
+      "video": "videos/acao-guerreiros.mp4"
+    },
+    {
+      "tipo": "video",
+      "titulo": "Nossas ações",
+      "etiqueta": "Ações",
+      "youtube": "https://youtu.be/5HwYooavG9k?is=HFp_tFRfUHxK9q3v"
     }
   ]
 }
